@@ -1,0 +1,4 @@
+*.pyc
+dist/
+cabot_check_hosts.egg-info/
+*.sw?
