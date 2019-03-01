@@ -90,7 +90,7 @@ class HostsStatusCheckPlugin(StatusCheckPlugin):
 		}
 	
     if check.host:
-	headers['"Host"'] = check.host
+	    headers['"Host"'] = check.host
 
     def run(self, check, result):
 
