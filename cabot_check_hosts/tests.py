@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from cabot.cabotapp.tests.tests_basic import LocalTestCase
 from cabot.cabotapp.models import StatusCheck, Instance
 from cabot.plugins.models import StatusCheckPluginModel
-from cabot_check_hosts.plugin import HttpStatusCheckPlugin
+from cabot_check_hosts.plugin import HostsStatusCheckPlugin
 from cabot.cabotapp.models import Service, StatusCheckResult
 from mock import Mock, patch
 import os
@@ -29,10 +29,10 @@ def fake_http_404_response(*args, **kwargs):
     resp.status_code = 404
     return resp
 
-class TestHttpStatusCheckPlugin(LocalTestCase):
+class TestHostsStatusCheckPlugin(LocalTestCase):
 
     def setUp(self):
-        super(TestHttpStatusCheckPlugin, self).setUp()
+        super(TestHostsStatusCheckPlugin, self).setUp()
 
         self.http_check_model, created = StatusCheckPluginModel.objects.get_or_create(
 	    slug='hosts'

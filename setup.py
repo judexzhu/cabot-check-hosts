@@ -9,5 +9,5 @@ setup(name='cabot-check-hosts',
       author_email='jude.x.zhu@gmail.com',
       url='https://www.newegg.com',
       packages=find_packages(),
-      download_url= '',
+      download_url= 'https://github.com/judexzhu/cabot-check-hosts/archive/master.tar.gz',
      )

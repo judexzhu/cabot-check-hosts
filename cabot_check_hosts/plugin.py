@@ -14,7 +14,7 @@ import requests
 import logging
 
 
-class HttpStatusCheckForm(forms.Form):
+class HostsStatusCheckForm(forms.Form):
     # HTTP checks
     endpoint = forms.CharField(
         help_text='HTTP(S) endpoint to poll.',
@@ -72,14 +72,14 @@ class HttpStatusCheckForm(forms.Form):
             }),
     )
 
-class HttpStatusCheckPlugin(StatusCheckPlugin):
+class HostsStatusCheckPlugin(StatusCheckPlugin):
     name = "HTTP Status"
     slug = "cabot_check_hosts"
     author = "Jude Zhu"
     version = "0.0.1"
     font_icon = "glyphicon glyphicon-coffee-to-go"
     
-    config_form = HttpStatusCheckForm
+    config_form = HostsStatusCheckForm
 
     plugin_variables = [
         'HTTP_USER_AGENT',
