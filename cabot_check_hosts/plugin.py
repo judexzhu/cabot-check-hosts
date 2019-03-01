@@ -64,7 +64,7 @@ class HostsStatusCheckForm(forms.Form):
         help_text='Set to false to allow not try to verify ssl certificates (default True)',
         required=False,
     )
-    host = forms.CharField(
+    hosts_header = forms.CharField(
         help_text='Host Header.',
         required=False,
         widget = forms.TextInput(attrs={
@@ -89,8 +89,8 @@ class HostsStatusCheckPlugin(StatusCheckPlugin):
 		    "User-Agent": settings.HTTP_USER_AGENT,
 		}
 	
-    if check.host:
-	    headers['"Host"'] = check.host
+    if check.hosts_header:
+	    headers['"Host"'] = check.hosts_header
 
     def run(self, check, result):
 
